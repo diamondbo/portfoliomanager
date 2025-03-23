@@ -1,0 +1,54 @@
+@page
+@model ProjectsModel
+@{
+    ViewData["Title"] = "Projects";
+}
+<h1>@ViewData["Title"]</h1>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+
+<form method="post">
+    <label>Name:</label>
+    <input type="text" asp-for="projectdb.ProjectName" required />
+
+    <label>Description:</label>
+    <input type="text" asp-for="projectdb.ProjectDescription" required />
+
+    <label for="roleDropdown">Category:</label>
+    <select id="roleDropdown" name="Category">
+    <option value="Python">Python</option>
+    <option value="C++">C++</option>
+    <option value="Java">Java</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-3">Add Project</button>
+</form>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Date Created</th>
+        <th>Is Reviewed</th>
+    </tr>
+    @foreach (var item in Model.projects)
+    {
+        <tr>
+            <td><a class="nav-link text-dark" asp-area="" asp-page="Details" asp-route-id="@item.ProjectId">@item.ProjectName</a></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-page="Details" asp-route-id="@item.ProjectId">@item.ProjectDescription</a></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-page="Details" asp-route-id="@item.ProjectId">@item.ProjectCategory</a></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-page="Details" asp-route-id="@item.ProjectId">@item.ProjectDate</a></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-page="Details" asp-route-id="@item.ProjectId">@item.ProjectIsReviewed</a></td>
+            
+        </tr>
+    }
+</table>
