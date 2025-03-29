@@ -13,7 +13,7 @@ namespace portfoliomanager.Models
         //public string ProjectLink { get; set; } = string.Empty;
         public DateTime ProjectDate { get; set; } = DateTime.Now;
         public string ProjectCategory { get; set; } = string.Empty;
-        //public int ProjectOwnerId { get; set; }
+        public string ProjectOwnerId { get; set; } = string.Empty;
         public bool ProjectIsReviewed { get; set; } = false;
         
     }

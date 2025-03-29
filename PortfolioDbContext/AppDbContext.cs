@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using portfoliomanager.Models;
 
-namespace portfoliomanager.PortFolioDbContext
+namespace portfoliomanager.PortFolioDbContexts
 {
     public class PortfolioDbContext : DbContext
     {

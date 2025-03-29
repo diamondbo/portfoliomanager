@@ -1,0 +1,70 @@
+@page
+@model RegisterUserModel
+@{
+    ViewData["Title"] = "Register";
+}
+<style>
+        .error { color: red; }
+        .success { color: green; }
+</style>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form method="post">
+        <label for="First Name">First Name:</label>
+        <input type="text" asp-for="user.FirstName" required>
+        <br><br>
+
+        <label for="Last name">Last Name:</label>
+        <input type="text" asp-for="user.LastName" required>
+        <br><br>
+
+        <label for="Username">UserName:</label>
+        <input type="text" asp-for="user.Username" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" asp-for="user.Email" required>
+        <br><br>
+
+         <label for="password">Password:</label>
+        <input type="password" id="password" asp-for="user.Passwordhash" required>
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <br><br>
+
+        <span id="message"></span>
+        <br><br>
+
+        <input type="submit" value="Submit" id="submitButton" disabled>
+</form>
+
+<script>
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const message = document.getElementById('message');
+    const submitButton = document.getElementById('submitButton');
+
+    function checkMatch()
+    {
+        if(confirmPassword.value === password.value){
+            message.textContent = 'Passwords match';
+            message.className = 'success';
+            submitButton.disabled = false;
+        } else {
+            message.textContent = 'confirmPassword doesnt match';
+            message.className = 'error';
+            submitButton.disabled = true;
+        }
+    }
+    confirmPassword.addEventListener('input', checkMatch);
+</script>

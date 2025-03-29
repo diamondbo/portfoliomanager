@@ -8,10 +8,16 @@ namespace portfoliomanager.Models
     {
         [Key]
         public int Id { get; set; }
-        public string? Name { get; set; }
+        [Required]
+        public string? FirstName { get; set; }
+        [Required]
+        public string? LastName { get; set; }
+        [Required]
         public string? Username { get; set; }
-        public string? Password { get; set; }
+        [Required]
+        public string? Passwordhash { get; set; }
+        [Required]
         public string? Email { get; set; }
-        public bool IsReviewer { get; set; } = false;
+        public bool Admin { get; set; } = false;
     }
 }

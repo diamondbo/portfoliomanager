@@ -1,14 +1,16 @@
-using System.Dynamic;
-using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 using portfoliomanager.Models;
-using portfoliomanager.PortFolioDbContext;
+using portfoliomanager.PortFolioDbContexts;
 
 namespace portfoliomanager.Pages
 {
+    
     public class ProjectsModel : PageModel
     {
         private readonly ILogger<ProjectsModel> _logger;
@@ -23,19 +25,43 @@ namespace portfoliomanager.Pages
             _context = context;
         }
         public List<Projectdb> projects { get; set; }= new();
-        public async Task OnGetAsync()
+        public string? Identifier { get; set; }
+        public string? Isd { get; set; }
+        public async Task OnGetAsync(string? token)
         {
-        projects = await _context.Projects.ToListAsync();
+            if (token == null)
+            {
+                Response.Redirect("/Login");
+            }
+            else
+            {
+               var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+                Isd = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                
+            }
+            projects = await _context.Projects.Where(u => u.ProjectOwnerId == Isd).ToListAsync();
         }
-        public async Task<IActionResult> OnPostAsync(Projectdb projectdb, string Category)
+        public async Task<IActionResult> OnPostAsync(Projectdb projectdb, string Category, string token)
         {
             if (ModelState.IsValid)
             {
+                if (token == null)
+             {
+                Response.Redirect("/Login");
+             }
+            
+               var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+                Isd = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            
+                projectdb.ProjectOwnerId=Isd!;
                 projectdb.ProjectCategory = Category;
                 _context.Projects.Add(projectdb);
                 TempData["Success"] = "Project added successfully.";
                 await _context.SaveChangesAsync();
                 return RedirectToPage("/Projects");
+             
             }
             else
             {
