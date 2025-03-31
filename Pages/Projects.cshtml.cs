@@ -10,7 +10,6 @@ using portfoliomanager.PortFolioDbContexts;
 
 namespace portfoliomanager.Pages
 {
-    
     public class ProjectsModel : PageModel
     {
         private readonly ILogger<ProjectsModel> _logger;
@@ -27,34 +26,35 @@ namespace portfoliomanager.Pages
         public List<Projectdb> projects { get; set; }= new();
         public string? Identifier { get; set; }
         public string? Isd { get; set; }
-        public async Task OnGetAsync(string? token)
+        public async Task OnGetAsync()
         {
-            if (token == null)
+            if (HttpContext.Session.GetString("token") == null)
             {
-                Response.Redirect("/Login");
+                TempData["Error"] = "Please login to continue.";
+               Response.Redirect("/Login");
             }
-            else
+           else
             {
                var handler = new JwtSecurityTokenHandler();
-                var jwtToken = handler.ReadJwtToken(token);
+                var jwtToken = handler.ReadJwtToken(HttpContext.Session.GetString("token"));
+                Identifier = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
                 Isd = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
                 
-            }
-            projects = await _context.Projects.Where(u => u.ProjectOwnerId == Isd).ToListAsync();
+            }            
+            projects = await _context.Projects.ToListAsync();
         }
-        public async Task<IActionResult> OnPostAsync(Projectdb projectdb, string Category, string token)
+        public async Task<IActionResult> OnPostAsync(Projectdb projectdb, string Category)
         {
-            if (ModelState.IsValid)
-            {
-                if (token == null)
-             {
+              if (HttpContext.Session.GetString("token") == null)
+              {
                 Response.Redirect("/Login");
-             }
+              }
             
                var handler = new JwtSecurityTokenHandler();
-                var jwtToken = handler.ReadJwtToken(token);
+                var jwtToken = handler.ReadJwtToken(HttpContext.Session.GetString("token"));
                 Isd = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            
+            if (ModelState.IsValid)
+            {
                 projectdb.ProjectOwnerId=Isd!;
                 projectdb.ProjectCategory = Category;
                 _context.Projects.Add(projectdb);

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,20 +24,35 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item"></li>
                             <a class="nav-link text-dark" asp-area="" asp-page="/Projects">Projects</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/RegisterUser">Register</a>
-                        </li>
-                        <li class="nav-item"></li>
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
-                        </li>
                     </ul>
+                    <ul>
+                     @if (!string.IsNullOrEmpty(HttpContextAccessor.HttpContext?.Session.GetString("token")))
+                     {
+                         <li><a asp-controller="User" asp-action="Logout">Logout (@HttpContextAccessor.HttpContext.Session.GetString("Username"))</a></li>
+                     }
+                     else
+                     {
+                         <li><a asp-page="/Login">Login </a></li>
+                         <li><a asp-page="/RegisterUser">Register</a></li>
+                      }
+                    </ul>
+
                 </div>
             </div>
         </nav>
     </header>
+    @if (TempData["Success"] != null)
+    {
+    <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+    <div class="alert alert-danger">@TempData["Error"]</div>
+    }
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

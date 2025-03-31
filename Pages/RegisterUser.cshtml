@@ -6,7 +6,65 @@
 <style>
         .error { color: red; }
         .success { color: green; }
+
+  /* Full-width div */
+.form-container {
+    width: 100vw; /* Full screen width */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #f4f4f4;
+}
+
+/* Centered form */
+.form-box {
+    background: white;
+    margin: 0.5%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40vw; /* Adjust form width */
+}
+.subheading {
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+.form-box label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+/* Input fields */
+.form-box input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button (Half the width of input) */
+.form-box button {
+    width: 50%; /* Half the width of input */
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    background: #0056b3;
+}
 </style>
+
 @if (TempData["Success"] != null)
 {
     <div class="alert alert-success">@TempData["Success"]</div>
@@ -16,8 +74,9 @@
 {
     <div class="alert alert-danger">@TempData["Error"]</div>
 }
-
-<form method="post">
+<div class="form-container">
+<form method="post" class="form-box">
+        <h3 class="subheading">Register</h3>
         <label for="First Name">First Name:</label>
         <input type="text" asp-for="user.FirstName" required>
         <br><br>
@@ -26,7 +85,7 @@
         <input type="text" asp-for="user.LastName" required>
         <br><br>
 
-        <label for="Username">UserName:</label>
+        <label for="Username">Username:</label>
         <input type="text" asp-for="user.Username" required>
         <br><br>
 
@@ -47,7 +106,7 @@
 
         <input type="submit" value="Submit" id="submitButton" disabled>
 </form>
-
+</div>
 <script>
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirmPassword');

@@ -14,7 +14,7 @@
     <div class="alert alert-danger">@TempData["Error"]</div>
 }
 
-
+<div class="form-container"
 <form method="post">
     <label>Name:</label>
     <input type="text" asp-for="projectdb.ProjectName" required />
@@ -31,11 +31,10 @@
 
     <button type="submit" class="btn btn-primary mt-3">Add Project</button>
 </form>
-@if(Model.Identifier != null)
+</div>
+@if(Model.Isd != null)
 {
-   <p>ff</p>
    <p>@Model.Identifier</p>
-   <p>@Model.Isd</p>
 }
 
 <table>

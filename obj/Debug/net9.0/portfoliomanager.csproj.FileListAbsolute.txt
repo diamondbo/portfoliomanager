@@ -229,5 +229,4 @@ C:\Users\diamo\OneDrive\Documents\GitHub\portfoliomanager\bin\Debug\net9.0\Scala
 C:\Users\diamo\OneDrive\Documents\GitHub\portfoliomanager\obj\Debug\net9.0\portfoliomanager.sourcelink.json
 C:\Users\diamo\OneDrive\Documents\GitHub\portfoliomanager\obj\Debug\net9.0\compressed\w6drc6f4a2-p4mua6pmtz.gz
 C:\Users\diamo\OneDrive\Documents\GitHub\portfoliomanager\obj\Debug\net9.0\compressed\j7zxr2wvbw-p4mua6pmtz.gz
-C:\Users\diamo\OneDrive\Documents\GitHub\portfoliomanager\bin\Debug\net9.0\System.Text.Json.dll
 C:\Users\diamo\OneDrive\Documents\GitHub\portfoliomanager\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
