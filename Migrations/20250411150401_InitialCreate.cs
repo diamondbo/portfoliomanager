@@ -15,12 +15,14 @@ namespace portfoliomanager.Migrations
                 name: "Projects",
                 columns: table => new
                 {
-                    ProjectId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProjectId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Projectdetails = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ProjectUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProjectCategory = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProjectOwnerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectIsReviewed = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -32,13 +34,13 @@ namespace portfoliomanager.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    IsReviewer = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Passwordhash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Admin = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,8 +51,7 @@ namespace portfoliomanager.Migrations
                 name: "IX_Users_Email",
                 table: "Users",
                 column: "Email",
-                unique: true,
-                filter: "[Email] IS NOT NULL");
+                unique: true);
         }
 
         /// <inheritdoc />

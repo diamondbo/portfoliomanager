@@ -1,37 +1,15 @@
 @page
 @model ProjectsModel
 @{
-    ViewData["Title"] = "Projects";
+    @if(Model.Isd != null)
+{
+  ViewData["Title"] =  Model.Identifier +"'s Projects";
+}
+    
 }
 <h1>@ViewData["Title"]</h1>
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">@TempData["Success"]</div>
-}
 
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
-
-
-<form method="post">
-    <label>Name:</label>
-    <input type="text" asp-for="projectdb.ProjectName" required />
-
-    <label>Description:</label>
-    <input type="text" asp-for="projectdb.ProjectDescription" required />
-
-    <label for="roleDropdown">Category:</label>
-    <select id="roleDropdown" name="Category">
-    <option value="Python">Python</option>
-    <option value="C++">C++</option>
-    <option value="Java">Java</option>
-    </select>
-
-    <button type="submit" class="btn btn-primary mt-3">Add Project</button>
-</form>
-
+<a class="btn btn-secondary" asp-page="/User/CreateProject">Create Project</a>
 <table>
     <tr>
         <th>Name</th>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("portfoliomanager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+388c581c34eaffaa73842e6458debbd6acf217a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("portfoliomanager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("portfoliomanager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

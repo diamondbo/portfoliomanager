@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using portfoliomanager.Models;
 
-namespace portfoliomanager.PortFolioDbContext
+namespace portfoliomanager.PortFolioDbContexts
 {
     public class PortfolioDbContext : DbContext
     {
@@ -20,6 +20,7 @@ namespace portfoliomanager.PortFolioDbContext
             .HasIndex(u => u.Email)
             .IsUnique();
             modelBuilder.Entity<Projectdb>().ToTable("Projects");
+            modelBuilder.Entity<Projectdb>().Property(p => p.ProjectOwnerId).IsRequired();
 
         }
     }

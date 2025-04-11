@@ -1,0 +1,39 @@
+
+@page
+@model DetailModel
+@{
+    ViewData["Title"] = "Project Details";
+}
+@if (Model.projectdetail != null)
+{
+    <div>
+        <h3>@Model.projectdetail.ProjectName</h3>
+        <p><strong>Category:</strong> @Model.projectdetail.ProjectCategory</p>
+        <p><strong>Description:</strong> @Model.projectdetail.ProjectDescription</p>
+    </div>
+    <a asp-page="Projects" class="btn btn-secondary">Back to List</a>
+    
+    <form method="post" asp-page-handler="Delete" asp-route-id="@Model.projectdetail.ProjectId">
+    <button type="submit" class="btn btn-link">Delete</button>
+    </form>
+    <form method="post" asp-page-handler="Edit" asp-route-id="@Model.projectdetail.ProjectId">
+    <label>Name:</label>
+    <input type="text" asp-for="projectdetail.ProjectName" required />
+
+    <label>Description:</label>
+    <input type="text" asp-for="projectdetail.ProjectDescription" required />
+
+    <label for="roleDropdown">Category:</label>
+    <select id="roleDropdown" name="Category">
+    <option value="Python">Python</option>
+    <option value="C++">C++</option>
+    <option value="C++">C#</option>
+    <option value="Java">Java</option>
+    </select>
+        <button type="submit" class="btn btn-link">Update</button>
+    </form>
+}
+else
+{
+    <p>Project not found.</p>
+}

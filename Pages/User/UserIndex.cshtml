@@ -1,0 +1,85 @@
+@page
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model UserIndexModel
+@{
+    ViewData["Title"] = "Admin Home";
+}
+ <style>
+        .dcontainer {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .icon {
+            width: 400px;
+            height: 400px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .icon:hover {
+            background-color: #bbb;
+            transform: scale(1.1);
+        }
+        .tables-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 600px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+ @if (HttpContextAccessor.HttpContext?.Session.GetString("Role")=="Admin")
+                     {
+                        <h2>You are an admin</h2>
+                     }
+<div class="dcontainer">
+ <div class="icon-grid">
+        <a href="#" class="icon">✏️</a> <!-- Edit User -->
+        <a href="#" class="icon">⭐</a> <!-- Review -->
+        <a href="#" class="icon">🖊️</a> <!-- Pen -->
+    </div>
+    
+    <div class="tables-container">
+        <table>
+            <tr>
+                <th>Table 1</th>
+                <th>Table 1</th>
+                <th>Table 1</th>
+            </tr>
+            <tr>
+                <td>Row 1</td>
+                <td>Row 1</td>
+                <td>Row 1</td>
+            </tr>
+            <tr><td>Row 2</td></tr>
+        </table>
+        
+        <table>
+            <tr><th>Table 2</th></tr>
+            <tr><td>Row 1</td></tr>
+            <tr><td>Row 2</td></tr>
+        </table>
+    </div>
+</div>

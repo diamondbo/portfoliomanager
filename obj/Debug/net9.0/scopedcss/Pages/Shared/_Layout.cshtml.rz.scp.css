@@ -5,12 +5,37 @@ a.navbar-brand[b-r7is398j61] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
 
+}
 a[b-r7is398j61] {
   color: #0077cc;
 }
-
+body[b-r7is398j61] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+.bodycontainer[b-r7is398j61] {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+.square[b-r7is398j61] {
+  width: 100%;
+  height: 100px;
+  background-color: #3498db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, filter 0.3s;
+}
+.square:hover[b-r7is398j61] {
+  transform: scale(1.2);
+}
+.square:not(:hover)[b-r7is398j61] {
+  filter: blur(3px);
+}
 .btn-primary[b-r7is398j61] {
   color: #fff;
   background-color: #1b6ec2;
