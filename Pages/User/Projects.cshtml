@@ -9,24 +9,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form method="post">
-    <label>Name:</label>
-    <input type="text" asp-for="projectdb.ProjectName" required />
-
-    <label>Description:</label>
-    <input type="text" asp-for="projectdb.ProjectDescription" required />
-
-    <label for="roleDropdown">Category:</label>
-    <select id="roleDropdown" name="Category">
-    <option value="Python">Python</option>
-    <option value="C++">C++</option>
-    <option value="C++">C#</option>
-    <option value="Java">Java</option>
-    </select>
-
-    <button type="submit">Add Project</button>
-</form>
-
+<a class="btn btn-secondary" asp-page="/User/CreateProject">Create Project</a>
 <table>
     <tr>
         <th>Name</th>

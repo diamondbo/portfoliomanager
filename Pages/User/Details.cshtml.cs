@@ -18,17 +18,12 @@ namespace portfoliomanager.Pages
             _context = context;
             _logger = logger;
         }
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(Guid id)
         {
             if(HttpContext.Session.GetString("token")==null)
             {
                 TempData["Error"]="You have to be logged in to view project details";
                 return RedirectToPage("/Login");
-            }
-            if (id == null)
-            {
-                TempData["Error"] = "Project ID is missing.";
-                return RedirectToPage("/User/Projects");
             }
 
             projectdetail = await _context.Projects.FirstOrDefaultAsync(p => p.ProjectId == id)
@@ -42,7 +37,7 @@ namespace portfoliomanager.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        public async Task<IActionResult> OnPostDeleteAsync(Guid id)
         {
             var projectToDelete = await _context.Projects.FindAsync(id);
 

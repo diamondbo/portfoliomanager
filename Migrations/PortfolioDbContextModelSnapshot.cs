@@ -24,11 +24,9 @@ namespace portfoliomanager.Migrations
 
             modelBuilder.Entity("portfoliomanager.Models.Projectdb", b =>
                 {
-                    b.Property<int>("ProjectId")
+                    b.Property<Guid>("ProjectId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ProjectCategory")
                         .IsRequired()
@@ -55,6 +53,10 @@ namespace portfoliomanager.Migrations
                     b.Property<DateTime>("ProjectUpdated")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Projectdetails")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects", (string)null);
@@ -62,11 +64,9 @@ namespace portfoliomanager.Migrations
 
             modelBuilder.Entity("portfoliomanager.Models.Userdb", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Admin")
                         .HasColumnType("bit");

@@ -12,6 +12,7 @@
         <p><strong>Description:</strong> @Model.projectdetail.ProjectDescription</p>
     </div>
     <a asp-page="Projects" class="btn btn-secondary">Back to List</a>
+    
     <form method="post" asp-page-handler="Delete" asp-route-id="@Model.projectdetail.ProjectId">
     <button type="submit" class="btn btn-link">Delete</button>
     </form>

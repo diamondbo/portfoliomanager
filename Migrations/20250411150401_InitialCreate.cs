@@ -15,10 +15,10 @@ namespace portfoliomanager.Migrations
                 name: "Projects",
                 columns: table => new
                 {
-                    ProjectId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProjectId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Projectdetails = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProjectUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProjectCategory = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -34,8 +34,7 @@ namespace portfoliomanager.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: false),

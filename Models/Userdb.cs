@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using portfoliomanager.Pages;
 
 namespace portfoliomanager.Models
@@ -7,7 +8,7 @@ namespace portfoliomanager.Models
     public class Userdb
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string? FirstName { get; set; }
         [Required]

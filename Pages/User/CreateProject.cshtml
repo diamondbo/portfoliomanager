@@ -1,0 +1,76 @@
+@page
+@model CreateProjectModel
+@{
+    ViewData["Title"] = "Create Project";
+}
+
+    <style>
+        .bcontainer {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+<div class="bcontainer">
+    <h2>Add New Project</h2>
+    <form method="Post" asp-page-handler="Add">
+        <label for="name">Project Name</label>
+        <input type="text" asp-for=@Model.Project.ProjectName required>
+
+        <label for="description">Description</label>
+        <input type="text" asp-for=@Model.Project.ProjectDescription required>
+
+        <label for="details">Project Details</label>
+        <textarea id="details" asp-for=@Model.Project.Projectdetails rows="6" required></textarea>
+
+        <label for="StartDate">Start Date</label>
+        <input type="date" asp-for=@Model.Project.ProjectDate name="startdate">
+
+        <label for="roleDropdown">Category:</label>
+        <select id="roleDropdown" name="Category">
+        <option value="Python">Python</option>
+        <option value="C++">C++</option>
+        <option value="C++">C#</option>
+        <option value="Java">Java</option>
+        </select>
+
+        <button type="submit">Add Project</button>
+    </form>
+</div>

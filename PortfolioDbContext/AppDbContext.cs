@@ -20,6 +20,7 @@ namespace portfoliomanager.PortFolioDbContexts
             .HasIndex(u => u.Email)
             .IsUnique();
             modelBuilder.Entity<Projectdb>().ToTable("Projects");
+            modelBuilder.Entity<Projectdb>().Property(p => p.ProjectOwnerId).IsRequired();
 
         }
     }
