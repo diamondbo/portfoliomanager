@@ -36,7 +36,7 @@ namespace portfoliomanager.Pages
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             TempData["Success"]= user.LastName + " has been registered";
-            return RedirectToPage("/Projects");
+            return RedirectToPage("Login");
         }
         public void OnGet()
         {

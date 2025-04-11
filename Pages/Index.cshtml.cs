@@ -23,16 +23,16 @@ public class IndexModel : PageModel
         {
             Token = token;
             var handler = new JwtSecurityTokenHandler();
-         if(handler.CanReadToken(token) == true)
-         {
+          if(handler.CanReadToken(token) == true)
+          {
             var jwttoken = handler.ReadJwtToken(token);
 
             Issuedat = jwttoken.ValidTo;
-         }
-         else
-         {
+          }
+          else
+          {
             Issuedat = null;
-         }
+          }
         }
         
     }

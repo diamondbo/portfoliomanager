@@ -41,15 +41,10 @@ namespace portfoliomanager.Pages
                 Isd = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
                 
             }            
-            projects = await _context.Projects.ToListAsync();
+            projects = await _context.Projects.Where(u => u.ProjectOwnerId == Isd).ToListAsync();
         }
         public async Task<IActionResult> OnPostAsync(Projectdb projectdb, string Category)
-        {
-              if (HttpContext.Session.GetString("token") == null)
-              {
-                Response.Redirect("/Login");
-              }
-            
+        {   
                var handler = new JwtSecurityTokenHandler();
                 var jwtToken = handler.ReadJwtToken(HttpContext.Session.GetString("token"));
                 Isd = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
@@ -60,7 +55,7 @@ namespace portfoliomanager.Pages
                 _context.Projects.Add(projectdb);
                 TempData["Success"] = "Project added successfully.";
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Projects");
+                return RedirectToPage("/User/Projects");
              
             }
             else

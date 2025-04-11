@@ -12,7 +12,7 @@ using portfoliomanager.PortFolioDbContexts;
 namespace portfoliomanager.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20250329160243_InitialCreate")]
+    [Migration("20250411023606_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -54,6 +54,9 @@ namespace portfoliomanager.Migrations
                     b.Property<string>("ProjectOwnerId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ProjectUpdated")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ProjectId");
 

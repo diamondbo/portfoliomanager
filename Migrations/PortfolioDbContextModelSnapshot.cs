@@ -52,6 +52,9 @@ namespace portfoliomanager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("ProjectUpdated")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects", (string)null);

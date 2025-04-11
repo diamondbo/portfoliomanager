@@ -20,6 +20,7 @@ namespace portfoliomanager.Migrations
                     ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ProjectUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProjectCategory = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectOwnerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectIsReviewed = table.Column<bool>(type: "bit", nullable: false)

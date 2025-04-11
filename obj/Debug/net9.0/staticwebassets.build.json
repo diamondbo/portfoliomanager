@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c/MTD2OuaszuIYJkUbkDVVn2oN/StnOIWGWm4lbyPiA=",
+  "Hash": "laLutorNDZhOO/xLwufgw+SmxHd7p+9rdw7s1bs7Uw0=",
   "Source": "portfoliomanager",
   "BasePath": "_content/portfoliomanager",
   "Mode": "Default",
@@ -1151,12 +1151,12 @@
       "OriginalItemSpec": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-bil98iuk6q.gz",
+      "Identity": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-au1u7dbjzm.gz",
       "SourceId": "portfoliomanager",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/portfoliomanager",
-      "RelativePath": "css/site#[.{fingerprint=bil98iuk6q}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=au1u7dbjzm}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1165,8 +1165,8 @@
       "RelatedAsset": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rvhdsgjkja",
-      "Integrity": "x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo=",
+      "Fingerprint": "ejk5el9cyf",
+      "Integrity": "Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "bil98iuk6q",
-      "Integrity": "3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs=",
+      "Fingerprint": "au1u7dbjzm",
+      "Integrity": "LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2728,13 +2728,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.bil98iuk6q.css",
-      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-bil98iuk6q.gz",
+      "Route": "css/site.au1u7dbjzm.css",
+      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-au1u7dbjzm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001686340641"
+          "Quality": "0.001689189189"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +2744,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "592"
+          "Value": "591"
         },
         {
           "Name": "ETag",
-          "Value": "\"x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo=\""
+          "Value": "\"Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 14:49:54 GMT"
+          "Value": "Mon, 31 Mar 2025 01:28:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +2772,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs=\""
+          "Value": "W/\"LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bil98iuk6q"
+          "Value": "au1u7dbjzm"
         },
         {
           "Name": "label",
@@ -2786,12 +2786,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs="
+          "Value": "sha256-LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc="
         }
       ]
     },
     {
-      "Route": "css/site.bil98iuk6q.css",
+      "Route": "css/site.au1u7dbjzm.css",
       "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +2801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1444"
+          "Value": "1442"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +2809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs=\""
+          "Value": "\"LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 14:49:54 GMT"
+          "Value": "Mon, 31 Mar 2025 01:28:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +2823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bil98iuk6q"
+          "Value": "au1u7dbjzm"
         },
         {
           "Name": "label",
@@ -2831,13 +2831,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs="
+          "Value": "sha256-LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc="
         }
       ]
     },
     {
-      "Route": "css/site.bil98iuk6q.css.gz",
-      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-bil98iuk6q.gz",
+      "Route": "css/site.au1u7dbjzm.css.gz",
+      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-au1u7dbjzm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +2846,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "592"
+          "Value": "591"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +2854,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo=\""
+          "Value": "\"Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 14:49:54 GMT"
+          "Value": "Mon, 31 Mar 2025 01:28:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +2876,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bil98iuk6q"
+          "Value": "au1u7dbjzm"
         },
         {
           "Name": "label",
@@ -2884,18 +2884,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo="
+          "Value": "sha256-Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-bil98iuk6q.gz",
+      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-au1u7dbjzm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001686340641"
+          "Quality": "0.001689189189"
         }
       ],
       "ResponseHeaders": [
@@ -2905,15 +2905,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "592"
+          "Value": "591"
         },
         {
           "Name": "ETag",
-          "Value": "\"x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo=\""
+          "Value": "\"Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 14:49:54 GMT"
+          "Value": "Mon, 31 Mar 2025 01:28:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2933,13 +2933,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs=\""
+          "Value": "W/\"LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs="
+          "Value": "sha256-LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc="
         }
       ]
     },
@@ -2954,7 +2954,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1444"
+          "Value": "1442"
         },
         {
           "Name": "Content-Type",
@@ -2962,11 +2962,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs=\""
+          "Value": "\"LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 14:49:54 GMT"
+          "Value": "Mon, 31 Mar 2025 01:28:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2976,13 +2976,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3bp9VDXFy+ifLNCT+M9uKiyUCS5TDaNKauOEn/M4LEs="
+          "Value": "sha256-LnCtb9jcCV+D06uu3eamMyHXcW4G0y4I1UxmowbvaMc="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-bil98iuk6q.gz",
+      "AssetFile": "C:\\Users\\diamo\\OneDrive\\Documents\\GitHub\\portfoliomanager\\obj\\Debug\\net9.0\\compressed\\uxug8qd1u0-au1u7dbjzm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2991,7 +2991,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "592"
+          "Value": "591"
         },
         {
           "Name": "Content-Type",
@@ -2999,11 +2999,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo=\""
+          "Value": "\"Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 14:49:54 GMT"
+          "Value": "Mon, 31 Mar 2025 01:28:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3021,7 +3021,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-x6dnfWJhjOIYHjaP7YIVUQx/R0fVXTLCOHf22xpvqVo="
+          "Value": "sha256-Osma0SRvdPMdk6bGN/RBAsyXSEgdhf8nSZdFg62L05I="
         }
       ]
     },

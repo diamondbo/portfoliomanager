@@ -12,6 +12,7 @@ namespace portfoliomanager.Pages
         private readonly PortfolioDbContext _context;
         private readonly ILogger<ProjectsModel> _logger;
         public Projectdb projectdetail { get; set; } = new();
+        public string? Category { get; set; }
         public DetailModel(PortfolioDbContext context, ILogger<ProjectsModel> logger)
         {
             _context = context;
@@ -19,10 +20,15 @@ namespace portfoliomanager.Pages
         }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if(HttpContext.Session.GetString("token")==null)
+            {
+                TempData["Error"]="You have to be logged in to view project details";
+                return RedirectToPage("/Login");
+            }
             if (id == null)
             {
                 TempData["Error"] = "Project ID is missing.";
-                return RedirectToPage("/Projects");
+                return RedirectToPage("/User/Projects");
             }
 
             projectdetail = await _context.Projects.FirstOrDefaultAsync(p => p.ProjectId == id)
@@ -31,7 +37,7 @@ namespace portfoliomanager.Pages
             if (projectdetail == null)
             {
                 TempData["Error"] = "Database Error";
-                return RedirectToPage("/Projects");
+                return RedirectToPage("/User/Projects");
             }
 
             return Page();
@@ -45,11 +51,30 @@ namespace portfoliomanager.Pages
                 _context.Projects.Remove(projectToDelete);
                 await _context.SaveChangesAsync();
                 TempData["Success"] = "Project deleted successfully.";
-                return RedirectToPage("/Projects");
+                return RedirectToPage("/User/Projects");
             }
 
             TempData["Error"] = "Project not found.";
-            return RedirectToPage("/Projects");
+            return RedirectToPage("/User/Projects");
+        }
+        public async Task<IActionResult> OnPostEditAsync(int id, Projectdb projectdetail, string Category)
+        {
+            var projectToEdit = await _context.Projects.FindAsync(id);
+
+            if (projectToEdit != null)
+            {
+                projectToEdit.ProjectName = projectdetail.ProjectName;
+                projectToEdit.ProjectDescription = projectdetail.ProjectDescription;
+                projectToEdit.ProjectCategory = Category;
+                projectToEdit.ProjectUpdated = DateTime.Now;
+
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Project updated successfully.";
+                return RedirectToPage("/User/Projects");
+            }
+
+            TempData["Error"] = "Project not found.";
+            return RedirectToPage("/User/Projects");
         }
     }
 }

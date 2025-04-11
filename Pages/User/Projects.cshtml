@@ -1,20 +1,14 @@
 @page
 @model ProjectsModel
 @{
-    ViewData["Title"] = "Projects";
+    @if(Model.Isd != null)
+{
+  ViewData["Title"] =  Model.Identifier +"'s Projects";
+}
+    
 }
 <h1>@ViewData["Title"]</h1>
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">@TempData["Success"]</div>
-}
 
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
-
-<div class="form-container"
 <form method="post">
     <label>Name:</label>
     <input type="text" asp-for="projectdb.ProjectName" required />
@@ -26,16 +20,12 @@
     <select id="roleDropdown" name="Category">
     <option value="Python">Python</option>
     <option value="C++">C++</option>
+    <option value="C++">C#</option>
     <option value="Java">Java</option>
     </select>
 
-    <button type="submit" class="btn btn-primary mt-3">Add Project</button>
+    <button type="submit">Add Project</button>
 </form>
-</div>
-@if(Model.Isd != null)
-{
-   <p>@Model.Identifier</p>
-}
 
 <table>
     <tr>
